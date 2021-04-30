@@ -1,6 +1,6 @@
 <template>
   <div
-    class="candidate-card relative flex flex-col justify-between items-start shadow-md pt-6 px-6 pb-6 rounded bg-white h-72 w-64 overflow-hidden"
+    class="candidate-card relative flex flex-col justify-between items-start shadow-md pt-6 px-6 pb-6 rounded bg-white h-80 w-64 overflow-hidden"
   >
     <div>
       <div>
@@ -18,10 +18,13 @@
         />
       </div>
     </div>
-    <div>
-      <div class="mt-12">
-        <p class="break-words text-xl">{{ candidate.name }}</p>
-      </div>
+    <div class="flex-grow">
+      <p class="mt-28 break-word text-xl whitespace-normal">
+        {{ candidate.name }}
+      </p>
+      <span v-if="candidate.distrito" class="text-gray-500">
+        Distrito {{ candidate.distrito }}
+      </span>
     </div>
     <div>
       <div v-show="candidate.coalition" class="mb-2">

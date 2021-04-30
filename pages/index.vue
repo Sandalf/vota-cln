@@ -28,7 +28,7 @@
         <div class="mt-3">Ayudame a encontrar mi distrito</div>
       </div>
       <div class="py-4">
-        <div class="text-xl text-gray-800 mb-3">Gubernaturas</div>
+        <div class="text-2xl text-gray-800 mb-3">Gubernaturas</div>
         <card-slideshow :slides="gobernors">
           <template #slide="{ active, slide }">
             <candidate-card :active="active" :candidate="slide" class="mr-3" />
@@ -36,7 +36,7 @@
         </card-slideshow>
       </div>
       <div class="py-4">
-        <div class="text-xl text-gray-800 mb-3">Diputaciones federales</div>
+        <div class="text-2xl text-gray-800 mb-3">Diputaciones federales</div>
         <card-slideshow :slides="federalDeputies">
           <template #slide="{ active, slide }">
             <candidate-card :active="active" :candidate="slide" class="mr-3" />
@@ -44,7 +44,7 @@
         </card-slideshow>
       </div>
       <div class="py-4">
-        <div class="text-xl text-gray-800 mb-3">Diputaciones locales</div>
+        <div class="text-2xl text-gray-800 mb-3">Diputaciones locales</div>
         <card-slideshow :slides="localDeputies">
           <template #slide="{ active, slide }">
             <candidate-card :active="active" :candidate="slide" class="mr-3" />
@@ -52,7 +52,7 @@
         </card-slideshow>
       </div>
       <div class="py-4">
-        <div class="text-xl text-gray-800 mb-3">Ayuntamiento</div>
+        <div class="text-2xl text-gray-800 mb-3">Ayuntamiento</div>
         <card-slideshow :slides="presidencies">
           <template #slide="{ active, slide }">
             <candidate-card :active="active" :candidate="slide" class="mr-3" />
@@ -87,6 +87,9 @@ export default {
       return this.candidates
         .filter((el) => el.type === 'diputacion-local')
         .sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
+        .sort((a, b) =>
+          a.distrito > b.distrito ? 1 : b.distrito > a.distrito ? -1 : 0
+        )
     },
     federalDeputies() {
       return this.candidates
@@ -111,7 +114,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
 
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
@@ -119,8 +122,8 @@ export default {
 }
 */
 body {
-  font-family: 'Antonio', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   background-color: #f3f3f3;
   min-height: 100vh;
 }

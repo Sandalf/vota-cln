@@ -130,6 +130,7 @@ export default {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   padding-top: 1rem;
   padding-bottom: 1rem;
   -webkit-overflow-scrolling: touch;
