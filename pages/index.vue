@@ -45,7 +45,7 @@ export default {
       description:
         'Encuentra a los candidatos por los que podrás votar en estas proximas elecciones',
       image:
-        'https://res.cloudinary.com/dvegrfypv/image/upload/v1619910062/vota-cln/logo_fpvmvy.png',
+        'https://res.cloudinary.com/dvegrfypv/image/upload/v1619911584/vota-cln/open-graph_x4quiy.png',
     }
   },
 
