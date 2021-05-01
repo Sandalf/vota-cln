@@ -27,38 +27,26 @@
         </select>
         <div class="mt-3">Ayudame a encontrar mi distrito</div>
       </div>
-      <div class="py-4">
-        <div class="text-2xl text-gray-800 mb-3">Gubernaturas</div>
-        <card-slideshow :slides="gobernors">
-          <template #slide="{ active, slide }">
-            <candidate-card :active="active" :candidate="slide" class="mr-3" />
-          </template>
-        </card-slideshow>
-      </div>
-      <div class="py-4">
-        <div class="text-2xl text-gray-800 mb-3">Diputaciones federales</div>
-        <card-slideshow :slides="federalDeputies">
-          <template #slide="{ active, slide }">
-            <candidate-card :active="active" :candidate="slide" class="mr-3" />
-          </template>
-        </card-slideshow>
-      </div>
-      <div class="py-4">
-        <div class="text-2xl text-gray-800 mb-3">Diputaciones locales</div>
-        <card-slideshow :slides="localDeputies">
-          <template #slide="{ active, slide }">
-            <candidate-card :active="active" :candidate="slide" class="mr-3" />
-          </template>
-        </card-slideshow>
-      </div>
-      <div class="py-4">
-        <div class="text-2xl text-gray-800 mb-3">Ayuntamiento</div>
-        <card-slideshow :slides="presidencies">
-          <template #slide="{ active, slide }">
-            <candidate-card :active="active" :candidate="slide" class="mr-3" />
-          </template>
-        </card-slideshow>
-      </div>
+      <candidates-slides-show
+        class="py-4"
+        title="Gubernaturas"
+        :candidates="gobernors"
+      />
+      <candidates-slides-show
+        class="py-4"
+        title="Diputaciones federales"
+        :candidates="federalDeputies"
+      />
+      <candidates-slides-show
+        class="py-4"
+        title="Diputaciones locales"
+        :candidates="localDeputies"
+      />
+      <candidates-slides-show
+        class="py-4"
+        title="Ayuntamiento"
+        :candidates="presidencies"
+      />
     </div>
   </div>
 </template>

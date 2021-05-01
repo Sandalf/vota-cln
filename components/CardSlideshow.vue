@@ -1,18 +1,66 @@
 <template>
-  <div class="card-slideshow">
-    <div class="wrapper">
-      <div ref="wrapperSlides" class="wrapper-slides">
-        <a
-          v-for="(slide, i) in slides"
-          :id="`slide-${i}`"
-          :key="`slide-${i}`"
-          class="slide p-sm"
-          :class="{ 'is-active': i === activeItem }"
-          @click="activeItem = i"
-          @focus="activeItem = i"
+  <div>
+    <div class="text-2xl text-gray-800 mb-3 flex items-center justify-between">
+      {{ title }}
+      <div class="hidden md:block">
+        <button
+          class="rounded px-4 py-2 bg-gray-100 hover:bg-gray-200 mr-2 focus:outline-none focus:ring focus:border-gray-300"
+          @click="forceScrollLeft"
         >
-          <slot name="slide" :slide="slide" :active="i === activeItem"></slot>
-        </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+        </button>
+        <button
+          class="rounded px-4 py-2 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring focus:border-gray-300"
+          @click="forceScrollRight"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="card-slideshow">
+      <div class="wrapper">
+        <div ref="wrapperSlides" class="wrapper-slides">
+          <a
+            v-for="(slide, i) in slides"
+            :id="`slide-${i}`"
+            :key="`slide-${i}`"
+            class="slide p-sm"
+            :class="{ 'is-active': i === activeItem }"
+            @click="activeItem = i"
+            @focus="activeItem = i"
+          >
+            <slot name="slide" :slide="slide" :active="i === activeItem"></slot>
+          </a>
+        </div>
+      </div>
+      <div class="md:hidden text-gray-400 text-center">
+        Desliza para ver mas candidatos
       </div>
     </div>
   </div>
@@ -27,6 +75,11 @@ export default {
   name: 'CardSlideshow',
 
   props: {
+    title: {
+      type: String,
+      required: true,
+      default: 'Candidatos',
+    },
     slides: {
       type: Array,
       required: true,
