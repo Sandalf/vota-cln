@@ -41,22 +41,66 @@ export default {
     return {
       selectedDistrict: null,
       candidates: [],
+      title: 'Vota CLN',
+      description:
+        'Encuentra a los candidatos por los que podrás votar en estas proximas elecciones',
+      image:
+        'https://res.cloudinary.com/dvegrfypv/image/upload/v1619910062/vota-cln/logo_fpvmvy.png',
     }
   },
 
-  head: {
-    title: 'Vota CLN',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'Encuentra a los candidatos por los que podrás votar en estas proximas elecciones',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head() {
+    return {
+      title: this.title,
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      meta: [
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.image,
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: this.title,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.title,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.description,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.image,
+        },
+        {
+          hid: 'og:image:secure_url',
+          property: 'og:image:secure_url',
+          content: this.image,
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.title,
+        },
+      ],
+    }
   },
 
   computed: {
