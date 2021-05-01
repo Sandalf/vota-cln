@@ -4,7 +4,7 @@
       <div class="container mx-auto p-4">
         <h1 class="text-3xl font-semibold">Votaciones CLN 2021</h1>
         <p>
-          Conoce los candidatos por los que podrás votar en estas proximas
+          Encuentra a los candidatos por los que podrás votar en estas proximas
           elecciones
         </p>
       </div>
@@ -36,18 +36,27 @@
 </template>
 
 <script>
-import FindDistrict from '@/components/FindDistrict'
-
 export default {
-  components: {
-    FindDistrict,
-  },
-
   data() {
     return {
       selectedDistrict: null,
       candidates: [],
     }
+  },
+
+  head: {
+    title: 'Vota CLN',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Encuentra a los candidatos por los que podrás votar en estas proximas elecciones',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   computed: {
