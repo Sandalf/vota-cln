@@ -101,11 +101,11 @@ export default {
   watch: {
     slides(newVal) {
       this.maxSlider = newVal.length
+      this.$refs.wrapperSlides.scrollLeft = 0
     },
   },
 
   mounted() {
-    this.addScroll()
     this.setSlideWidth()
   },
 
@@ -124,30 +124,12 @@ export default {
       }
     },
 
-    handleScroll(e) {
-      // const horizontal = e.currentTarget.scrollLeft;
-      // let newActive = parseInt(horizontal / (this.slideWidth / 2));
-      // if (newActive + 1 > this.slides.length) {
-      //   newActive = this.slides.length - 1;
-      // }
-      // this.pastActiveItem = this.activeItem;
-      // this.activeItem = newActive;
-    },
-
     forceScrollRight() {
       this.$refs.wrapperSlides.scrollLeft += this.slideWidth
     },
 
     forceScrollLeft() {
       this.$refs.wrapperSlides.scrollLeft -= this.slideWidth
-    },
-
-    addScroll() {
-      this.$refs.wrapperSlides.addEventListener('scroll', this.handleScroll)
-    },
-
-    removeScroll() {
-      this.$refs.wrapperSlides.removeEventListener('scroll', this.handleScroll)
     },
 
     setSlideWidth() {

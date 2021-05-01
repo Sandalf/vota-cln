@@ -84,8 +84,8 @@ export default {
     left: 0;
     background-image: linear-gradient(
       to right bottom,
-      rgb(198, 198, 198),
-      rgb(139, 139, 139)
+      rgb(139, 139, 139),
+      rgb(198, 198, 198)
     );
     color: white;
     clip-path: polygon(0 0%, 100% 0, 100% 80%, 0 100%);
@@ -109,8 +109,28 @@ export default {
       background-image: linear-gradient(to right bottom, #e186b0, #e09dbc);
     }
 
+    &.pan {
+      background-image: linear-gradient(to right bottom, #2c7fbc, #489ad4);
+    }
+
+    &.pas {
+      background-image: linear-gradient(to right bottom, #2d1f71, #4c3ba1);
+    }
+
     &.pes {
       background-image: linear-gradient(to right bottom, #533778, #715299);
+    }
+
+    &.prd {
+      background-image: linear-gradient(to right bottom, #f3cb47, #fde38b);
+    }
+
+    &.pt {
+      background-image: linear-gradient(to right bottom, #cb3c35, #e0544c);
+    }
+
+    &.pvem {
+      background-image: linear-gradient(to right bottom, #6bb052, #91d179);
     }
   }
 }
