@@ -10,23 +10,7 @@
       </div>
     </div>
     <div class="container mx-auto p-4">
-      <div>
-        <div class="text-2xl text-gray-800">Distrito</div>
-        <select
-          v-model="selectedDistrict"
-          class="w-full md:w-64 p-2 border rouded mt-2"
-        >
-          <option disabled :value="null">Selecciona tu distrito</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-        </select>
-        <div class="mt-3">Ayudame a encontrar mi distrito</div>
-      </div>
+      <find-district :district.sync="selectedDistrict" />
       <candidates-slides-show
         class="py-4"
         title="Gubernaturas"
@@ -52,7 +36,13 @@
 </template>
 
 <script>
+import FindDistrict from '@/components/FindDistrict'
+
 export default {
+  components: {
+    FindDistrict,
+  },
+
   data() {
     return {
       selectedDistrict: null,
