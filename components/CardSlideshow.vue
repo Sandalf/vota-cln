@@ -43,7 +43,7 @@
         </button>
       </div>
     </div>
-    <div class="card-slideshow">
+    <div v-if="slides.length" class="card-slideshow">
       <div class="wrapper">
         <div ref="wrapperSlides" class="wrapper-slides">
           <a
@@ -62,6 +62,9 @@
       <div class="md:hidden text-gray-400 text-center">
         Desliza para ver mas candidatos
       </div>
+    </div>
+    <div v-else class="flex items-center justify-center h-32">
+      <div class="text-gray-400 text-center">Cargando...</div>
     </div>
   </div>
 </template>
@@ -101,7 +104,9 @@ export default {
   watch: {
     slides(newVal) {
       this.maxSlider = newVal.length
-      this.$refs.wrapperSlides.scrollLeft = 0
+      if (this.$refs.wrapperSlides) {
+        this.$refs.wrapperSlides.scrollLeft = 0
+      }
     },
   },
 

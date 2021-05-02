@@ -21,7 +21,7 @@
         class="w-full md:w-64 p-2 border border-gray-200 rouded mt-2"
         @change="handleChange"
       >
-        <option disabled :value="null">Selecciona tu distrito</option>
+        <option :value="null">Todos los ditritos</option>
         <option>12</option>
         <option>13</option>
         <option>14</option>

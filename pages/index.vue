@@ -10,7 +10,6 @@
       </div>
     </div>
     <div class="container mx-auto p-4">
-      <find-district :district.sync="selectedDistrict" />
       <candidates-slides-show
         class="py-4"
         title="Gubernaturas"
@@ -18,18 +17,19 @@
       />
       <candidates-slides-show
         class="py-4"
+        title="Ayuntamiento"
+        :candidates="presidencies"
+      />
+      <candidates-slides-show
+        class="py-4"
         title="Diputaciones federales"
         :candidates="federalDeputies"
       />
+      <find-district :district.sync="selectedDistrict" />
       <candidates-slides-show
         class="py-4"
         title="Diputaciones locales"
-        :candidates="localDeputies"
-      />
-      <candidates-slides-show
-        class="py-4"
-        title="Ayuntamiento"
-        :candidates="presidencies"
+        :candidates="filteredLocalDeputies"
       />
     </div>
     <footer>
@@ -141,6 +141,14 @@ export default {
         .sort((a, b) =>
           a.distrito > b.distrito ? 1 : b.distrito > a.distrito ? -1 : 0
         )
+    },
+    filteredLocalDeputies() {
+      if (this.selectedDistrict) {
+        return this.localDeputies.filter(
+          (el) => el.distrito.toString() === this.selectedDistrict
+        )
+      }
+      return this.localDeputies
     },
     federalDeputies() {
       return this.candidates
