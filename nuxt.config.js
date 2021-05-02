@@ -7,16 +7,65 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'vota-cln',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'es',
     },
+    title: 'Vota CLN',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Vota CLN',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content:
+          'Encuentra a los candidatos por los que podrás votar en estas proximas elecciones',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content:
+          'https://res.cloudinary.com/dvegrfypv/image/upload/v1619911584/vota-cln/open-graph_x4quiy.png',
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'Vota CLN',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Vota CLN',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'Encuentra a los candidatos por los que podrás votar en estas proximas elecciones',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content:
+          'https://res.cloudinary.com/dvegrfypv/image/upload/v1619911584/vota-cln/open-graph_x4quiy.png',
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content:
+          'https://res.cloudinary.com/dvegrfypv/image/upload/v1619911584/vota-cln/open-graph_x4quiy.png',
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'Vota CLN',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
