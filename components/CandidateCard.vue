@@ -7,6 +7,7 @@
         <div class="diagonal" :class="[candidate.party]"></div>
         <img
           v-if="candidate.image"
+          v-lazy-load
           class="w-24 h-24 object-cover rounded-full z-10 absolute shadow"
           :src="candidate.image"
           alt=""
@@ -33,12 +34,14 @@
       <div class="flex">
         <img
           v-if="candidate.coalition && candidate.coalition !== 'mp'"
+          v-lazy-load
           :src="require(`@/assets/img/${candidate.coalition}.png`)"
           alt=""
           srcset=""
           class="w-8 mr-2"
         />
         <img
+          v-lazy-load
           :src="require(`@/assets/img/${candidate.party}.png`)"
           alt=""
           srcset=""
@@ -46,6 +49,7 @@
         />
         <img
           v-if="candidate.party2"
+          v-lazy-load
           :src="require(`@/assets/img/${candidate.party2}.png`)"
           alt=""
           srcset=""
@@ -53,6 +57,7 @@
         />
         <img
           v-if="candidate.party3"
+          v-lazy-load
           :src="require(`@/assets/img/${candidate.party3}.png`)"
           alt=""
           srcset=""

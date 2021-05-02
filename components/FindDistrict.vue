@@ -61,7 +61,7 @@
         Buscar distrito
       </button>
 
-      <img class="mt-2" src="@/assets/img/ine-seccion.png" />
+      <img class="mt-2" src="@/assets/img/ine-seccion.png" v-lazy-load />
     </div>
   </div>
 </template>

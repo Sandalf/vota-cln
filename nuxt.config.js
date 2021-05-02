@@ -85,6 +85,7 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    'nuxt-lazy-load',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
