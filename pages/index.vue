@@ -154,6 +154,9 @@ export default {
       return this.candidates
         .filter((el) => el.type === 'diputacion-federal')
         .sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
+        .sort((a, b) =>
+          a.distrito > b.distrito ? 1 : b.distrito > a.distrito ? -1 : 0
+        )
     },
   },
 

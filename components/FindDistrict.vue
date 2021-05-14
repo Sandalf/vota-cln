@@ -36,7 +36,7 @@
           role="button"
           @click="insertSection = true"
         >
-          Ayudame a encontrar mi distrito
+          Ayúdame a encontrar mi distrito
         </button>
       </div>
     </div>
@@ -61,7 +61,7 @@
         Buscar distrito
       </button>
 
-      <img class="mt-2" src="@/assets/img/ine-seccion.png" v-lazy-load />
+      <img v-lazy-load class="mt-2" src="@/assets/img/ine-seccion.png" />
     </div>
   </div>
 </template>

@@ -114,10 +114,6 @@ export default {
     this.setSlideWidth()
   },
 
-  beforeDestroy() {
-    this.removeScroll()
-  },
-
   methods: {
     sliderChange(index) {
       this.pastActiveItem = this.activeItem

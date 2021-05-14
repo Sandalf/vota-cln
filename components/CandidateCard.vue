@@ -33,7 +33,11 @@
       </div>
       <div class="flex">
         <img
-          v-if="candidate.coalition && candidate.coalition !== 'mp'"
+          v-if="
+            candidate.coalition &&
+            candidate.coalition !== 'mp' &&
+            candidate.coalition !== 'mptv'
+          "
           v-lazy-load
           :src="require(`@/assets/img/${candidate.coalition}.png`)"
           alt=""
